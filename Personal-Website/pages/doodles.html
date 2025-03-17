@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Website - Landing</title>
+
+        <meta name="author" content="Theo Platt">
+        <meta name="description" content="Personal Website Assignment - Homepage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="../sources/header.js"></script>
+        <link rel="stylesheet" href="../sources/stylesheet.css">
+    </head>
+
+
+    <body id="body">
+
+
+
+
+        <header id="header">
+
+            <!-- menus has the navbar and settings button -->
+            <div id="menus" class="menus">
+    
+                <script>
+                    generate_navbar(parentID="menus")
+                </script>
+    
+                <div id="div-settings" class="dropdown">
+                    <button class="settings">Settings
+                        <div id="dc-set" class="dropdown-content">
+                            <input type="checkbox" id="darkmode" name="darkmode_name" onclick="toggle_darkmode(this.checked)">
+                            <label for="darkmode">Darkmode</label>
+                        </div>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- titles has the page's title -->
+            <div id="titles" class="titles">
+                <script>
+                    generate_header(parentID="titles")
+                </script>
+            </div>
+            
+        </header>
+        
+    
+    
+        <br>
+    
+    
+    
+        <main id="main">
+                
+            <div>
+                <h2>Doodlin</h2>
+                <p>I doodle in my spare time. This page has a few doodles I&apos;ve done.</p>
+            </div>
+            
+            <div id="flexdiv" class="flex-container">
+                <img class="doodle" src="../sources/img/doodles/do0.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/doodel1.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/doodl2.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/doodle3.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/doodle4.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dodl5.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dude6.jpg" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dudlle7.png" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/deedle8.png" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dougdl9.png" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dubbledub10.png" alt="a doodle">
+                <img class="doodle" src="../sources/img/doodles/dl11.jpg" alt="a doodle">
+            </div>
+        </main>
+    
+    
+    
+        <br>
+    
+    
+    
+        <footer id="footer">
+            <p>&copy;2025 Theo Platt, Unless otherwise specified, use only per <a href="./license.html">license</a></p>
+        </footer>
+    
+        <script>load_darkmode()</script>
+
+    </body>
+    </html>

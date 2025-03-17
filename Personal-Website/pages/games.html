@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Website - Landing</title>
+
+        <meta name="author" content="Theo Platt">
+        <meta name="description" content="Personal Website Assignment - Homepage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="../sources/header.js"></script>
+        <link rel="stylesheet" href="../sources/stylesheet.css">
+    </head>
+
+
+    <body id="body">
+
+
+
+
+        <header id="header">
+
+            <!-- menus has the navbar and settings button -->
+            <div id="menus" class="menus">
+    
+                <script>
+                    generate_navbar(parentID="menus")
+                </script>
+    
+                <div id="div-settings" class="dropdown">
+                    <button class="settings">Settings
+                        <div id="dc-set" class="dropdown-content">
+                            <input type="checkbox" id="darkmode" name="darkmode_name" onclick="toggle_darkmode(this.checked)">
+                            <label for="darkmode">Darkmode</label>
+                        </div>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- titles has the page's title -->
+            <div id="titles" class="titles">
+                <script>
+                    generate_header(parentID="titles")
+                </script>
+            </div>
+            
+        </header>
+        
+    
+    
+        <br>
+    
+    
+    
+        <main id="main">
+                
+            <div>
+                <h2>Gameplay</h2>
+                <p>I enjoy playing games and, periodically, attempting to make games. Below are some screenshots/pictures from games I&apos;m playing recently</p>
+
+                <div id="flexdiv" class="flex-container">
+                    <!-- <img class="game" src="../sources/img/games/GTFO.png" alt="a screenshot of GTFO"> -->
+                    <img class="game" src="../sources/img/games/Satisfactory.png" alt="a screenshot of Satisfactory">
+                    <img class="game" src="../sources/img/games/Zomboid.png" alt="a screenshot of Project Zomboid">
+                    <img class="game" src="../sources/img/games/Cthulhu.jpg" alt="a picture of Cthulhu DMD">
+                    <img class="game" src="../sources/img/games/sgwitch.png" alt="a screenshot of a bug">
+                    <img class="game" src="../sources/img/games/sgwitch.gif" alt="a gif of my game">
+                    <img class="game" src="../sources/img/games/isat.gif" alt="ISAT ligma b-">
+                </div>
+            </div>
+            <div>
+                <h2>Game Dev</h2>
+                <p>I also dabble in games development. Below is a game I threw together as a learning project for Godot. Note: the game requires a keyboard (sorry mobile users)</p>
+
+                <iframe src="https://theo-platt.github.io/my_game/" title="Shotgun Witch"></iframe>
+                <p>Controls:</p>
+                <ul>
+                    <li>Move left: a</li>
+                    <li>Move Right: d</li>
+                    <li>Jump: Space</li>
+                    <li>Shoot: Left-Click</li>
+                    <li>Reload: r</li>
+                </ul>
+            </div>
+        </main>
+    
+    
+    
+        <br>
+    
+    
+    
+        <footer id="footer">
+            <p>&copy;2025 Theo Platt, Unless otherwise specified, use only per <a href="./license.html">license</a></p>
+        </footer>
+    
+        <script>load_darkmode()</script>
+
+    </body>
+    </html>

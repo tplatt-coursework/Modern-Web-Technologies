@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Website - Landing</title>
+
+        <meta name="author" content="Theo Platt">
+        <meta name="description" content="Personal Website Assignment - Homepage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="../sources/header.js"></script>
+        <link rel="stylesheet" href="../sources/stylesheet.css">
+    </head>
+
+
+    <body id="body">
+
+        <header id="header">
+
+            <!-- menus has the navbar and settings button -->
+            <div id="menus" class="menus">
+    
+                <script>
+                    generate_navbar(parentID="menus")
+                </script>
+    
+                <div id="div-settings" class="dropdown">
+                    <button class="settings">Settings
+                        <div id="dc-set" class="dropdown-content">
+                            <input type="checkbox" id="darkmode" name="darkmode_name" onclick="toggle_darkmode(this.checked)">
+                            <label for="darkmode">Darkmode</label>
+                        </div>
+                    </button>
+                </div>
+            </div>
+    
+            <!-- titles has the page's title -->
+            <div id="titles" class="titles">
+                <script>
+                    generate_header(parentID="titles")
+                </script>
+            </div>
+            
+        </header>
+        
+    
+    
+        <br>
+    
+    
+    
+        <main id="main">
+            <h2>Professional</h2>
+            <ul>
+                <li>Email: theop@nmsu.edu</li>
+                <li>Mobile: 1+ 000-000-0000 (not sharing this publicly)</li>
+            </ul>
+            <h2>Socials</h2>
+            <ul>
+                <li>Discord: Robo_Banana</li>
+                <li>Steam: Robo_Banana</li>
+            </ul>
+
+            <p>The best way to reach me is via discord message or email. Un-prompted phonecalls will be ignored, thus the number is not provided.</p>
+        </main>
+    
+    
+    
+        <br>
+    
+    
+    
+        <footer id="footer">
+            <p>&copy;2025 Theo Platt, Unless otherwise specified, use only per <a href="./license.html">license</a></p>
+        </footer>
+    
+        <script>load_darkmode()</script>
+
+    </body>
+    </html>

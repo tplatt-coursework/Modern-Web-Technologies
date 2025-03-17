@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Personal Website - Landing</title>
+
+        <meta name="author" content="Theo Platt">
+        <meta name="description" content="Personal Website Assignment - Homepage">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script type="text/javascript" src="../sources/header.js"></script>
+        <link rel="stylesheet" href="../sources/stylesheet.css">
+    </head>
+
+
+<body id="body">
+
+
+
+
+    <header id="header">
+
+        <!-- menus has the navbar and settings button -->
+        <div id="menus" class="menus">
+
+            <script>
+                generate_navbar(parentID="menus")
+            </script>
+
+            <div id="div-settings" class="dropdown">
+                <button class="settings">Settings
+                    <div id="dc-set" class="dropdown-content">
+                        <input type="checkbox" id="darkmode" name="darkmode_name" onclick="toggle_darkmode(this.checked)">
+                        <label for="darkmode">Darkmode</label>
+                    </div>
+                </button>
+            </div>
+        </div>
+
+        <!-- titles has the page's title -->
+        <div id="titles" class="titles">
+            <script>
+                generate_header(parentID="titles")
+            </script>
+        </div>
+        
+    </header>
+    
+
+
+    <br>
+
+
+
+    <main id="main">
+        <h2>License</h2>
+        <p>
+            License Completely copy-pasted from Dr. Bill Hamilton's &quot;03-html&quot; presentation slides, presented as a part of the NMSU CS-532 Modern Web Technologies course.
+            <br>
+            <br>
+            
+            Use and cite freely for non-commercial education and scholarship without profit, provided that credit is given to the author and this notice is included.
+            <br>
+            Borrowed materials are noted and copyrights maintained by their respective authors.
+            <br>
+            All other rights reserved.
+            </p>
+    </main>
+
+
+
+    <br>
+
+
+
+    <footer id="footer">
+        <p>&copy;2025 Theo Platt, Unless otherwise specified, use only per <a href="./license.html">license</a></p>
+    </footer>
+
+    <script>load_darkmode()</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
