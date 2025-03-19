@@ -1,0 +1,25 @@
+{
+  "name": "restful-api-and-database-application",
+  "version": "1.0.0",
+  "description": "The purpose of this assignment is to familiarize yourself with creating a database powered web application. While that can entail a variety of different technologies, for this assignment you will use node.js and MongoDB.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/tplatt-coursework/Modern-Web-Technologies.git"
+  },
+  "keywords": [
+    "mongo",
+    "node",
+    "express",
+    "REST"
+  ],
+  "author": "Theoderic Platt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tplatt-coursework/Modern-Web-Technologies/issues"
+  },
+  "homepage": "https://github.com/tplatt-coursework/Modern-Web-Technologies#readme"
+}
