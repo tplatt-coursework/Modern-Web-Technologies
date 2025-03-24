@@ -21,5 +21,10 @@
   "bugs": {
     "url": "https://github.com/tplatt-coursework/Modern-Web-Technologies/issues"
   },
-  "homepage": "https://github.com/tplatt-coursework/Modern-Web-Technologies#readme"
+  "homepage": "https://github.com/tplatt-coursework/Modern-Web-Technologies#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "mongoose": "^8.12.1"
+  }
 }
