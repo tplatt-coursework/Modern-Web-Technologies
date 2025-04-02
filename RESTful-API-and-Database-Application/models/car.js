@@ -14,3 +14,5 @@ carSchema.statics.listAllCars = function() {
 var carModel = mongoose.model('car', carSchema);
 
 module.exports = carModel;
+
+
