@@ -21,7 +21,7 @@
 These instructions are for running this assignment on localhost `127.0.0.1`. If running on localhost, you will need to have a mongodb listening on the default port `27017` with no authentication set up.
 
 ### Setting up Mongo
-To set up mongo, a simple dockerfile is included in `/mongo` that spins up a simple mongo database. Run this inside docker locally. (`[Docker Docs](https://docs.docker.com/)`)
+To set up mongo, a simple dockerfile is included in `/mongo` that spins up a simple mongo database. Run this inside docker locally. Docker's documentation can be found [here](https://docs.docker.com/).
 
 ### Running the assignment code
 In the config file `config.js`, ensure that the variable `localhost` is set to `true`.
