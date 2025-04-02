@@ -1,19 +1,9 @@
 # Metadata
-### Author
-Theo Platt
-
-### Course
-CS-532-M01 Modern Web Technologies; Dr. Bill Hamilton
-
-### Assignment
-Individual Assignment: Distributed Multiplayer Game
-
-### Deadline
-03/19/2025
-
-### Description
-This assignment builds upon the Simple Multiplayer Game assignment. 
-
+ - Author: Theo Platt
+ - Course: CS-532-M01 Modern Web Technologies; Dr. Bill Hamilton
+ - Assignment: Individual Assignment: Distributed Multiplayer Game
+ - Deadline: 03/19/2025
+ - Description: This assignment builds upon the Simple Multiplayer Game assignment. 
 
 ---
 
