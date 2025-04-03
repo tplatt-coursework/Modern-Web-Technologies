@@ -18,33 +18,31 @@ main().then(function() {
 }).catch(err => console.log(err))
 
 
-
-// app.set("view engine", "ejs")
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get("/", function(req, res){
     try{
-        res.send("RESTful API and Database Application is live.")
+        res.status(200).send("RESTful API and Database Application is live.")
     }catch(e){
         console.log(`Error: ${e}`)
-        res.status(500)
+        res.status(500).send('Internal Server Error')
     }
 })
 
 app.get("/upload", function(req, res){
     try{
-        res.sendFile(path.join(__dirname, 'views/pages', 'form.html'));
+        res.status(200).sendFile(path.join(__dirname, 'views/pages', 'form.html'));
     }catch(e){
         console.log(`Error: ${e}`)
-        res.status(500)
+        res.status(500).send('Internal Server Error')
     }
 })
 
 app.get("/list", function(req,res) {
     try{
         animeModel.listAllAnime().then(function(anime){
-            res.sendFile(path.join(__dirname, 'views/pages', 'animeList.html'));
+            res.status(200).sendFile(path.join(__dirname, 'views/pages', 'animeList.html'));
         })
     }catch(e){
         console.log(`Error: ${e}`)
@@ -60,11 +58,11 @@ app.post('/anime', function(req, res){
         let newAnime = new animeModel(req.body.anime)
         
         newAnime.save().then(function(){
-            res.send("Added new anime to database!")
+            res.status(200).send("Added new anime to database!")
         })
     }catch(e){
         console.log(`Error: ${e}`)
-        res.status(500)
+        res.status(500).send('Internal Server Error')
     }
 
 })
@@ -73,10 +71,10 @@ app.get('/animes', async function(req,res){
     try{
         let mongo_query = await animeModel.listAllAnime({})
         console.log(mongo_query)
-        res.send(mongo_query)
+        res.status(200).send(mongo_query)
     }catch(e){
         console.log(`Error: ${e}`)
-        res.status(500)
+        res.status(500).send('Internal Server Error')
     }
 })
 
