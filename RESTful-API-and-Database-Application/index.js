@@ -1,12 +1,11 @@
 let express = require('express')
 let mongoose = require('mongoose')
 let animeModel = require("./models/anime")
-let config = require("./config")
+let config = require("./config").config
 let app = express()
 const path = require('path')
 const port = 3000
-let mongoURI = `mongodb://root:t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF@${ config.localhost ? `mongodb` : `localhost` }:27017`
-
+let mongoURI = `mongodb://root:t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF@${ config.localhost ? `localhost`:`mongodb` }:27017`
 
 // Mongo Connection
 async function main() {

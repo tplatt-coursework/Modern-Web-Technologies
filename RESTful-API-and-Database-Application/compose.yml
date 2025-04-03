@@ -4,11 +4,11 @@ services:
     
   node:
     restart: always
-    container_name: mongo_test
+    container_name: tplatt-API-Assignment
     environment:
       NODE_NUMBER: 1
     ports:
-      - '2106:3000' 
+      - '30661:3000' 
     build:
       context: .
       dockerfile: ./Dockerfile.node
