@@ -73,7 +73,7 @@ When stopping a podman container, sometimes something with the aardvark dns goes
 ```
 
 If the instructor has not fixed this issue yet, running this command after stopping the podman container will temporarily fix the issue. The issue will occur again after successfully starting and stopping a container.
-`kill -9 "$(cat /run/user/"$(id -u)"/containers/networks/aardvark-dns/aardvark.pid)"`
+`kill -9 "$(cat /run/user/"$(id -u)"/containers/networks/aardvark-dns/aardvark.pid)";rm -rf /run/user/"$(id -u)"/containers/networks/aardvark-dns/*`
 
 ### aardvark issue
 

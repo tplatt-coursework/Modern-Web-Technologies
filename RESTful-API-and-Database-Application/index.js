@@ -5,7 +5,7 @@ let config = require("./config").config
 let app = express()
 const path = require('path')
 const port = 3000
-let mongoURI = `mongodb://root:t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF@${ config.localhost ? `localhost`:`mongodb` }:27017`
+let mongoURI = `mongodb://root:t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF@${ config.localhost ? `localhost`:`mongo` }:27017`
 
 // Mongo Connection
 async function main() {
@@ -93,5 +93,5 @@ app.get('/animes', async function(req,res){
 })
 
 app.listen(port, function() {
-  console.log("App listening on port " + port + " !")
+  console.log("App listening on port " + port + "!")
 })
