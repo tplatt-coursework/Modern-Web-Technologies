@@ -11,15 +11,15 @@ In this assignment I create a database powered web app using node.js and MongoDB
 
 ### Deliverables
 [ ] `/upload`
-    HTTP POST request allowing for the entry of a new document into the MongoDB.
+    HTTP POST request allowing for the entry of a new document into the MongoDB. </br>
 [ ] `/list`
-    lists all objects within your collection. This page can be either rendered server side or client side using AJAX to a rest route.
+    lists all objects within your collection. This page can be either rendered server side or client side using AJAX to a rest route.</br>
 [ ] `/query`
-    Takes some input into a form and makes a parameterized query of the data set. This request must be made via AJAX from the page at /query, i.e., using XMLHttpRequest or Fetch.
+    Takes some input into a form and makes a parameterized query of the data set. This request must be made via AJAX from the page at /query, i.e., using XMLHttpRequest or Fetch.</br>
 [x] `/anime`
-    HTTP POST request to create an object in the dataset
+    HTTP POST request to create an object in the dataset</br>
 [ ] `/<Object Name>s`
-    HTTP GET request that takes query parameters to make to return query result of objects
+    HTTP GET request that takes query parameters to make to return query result of objects</br>
 ---
 
 # Files included
