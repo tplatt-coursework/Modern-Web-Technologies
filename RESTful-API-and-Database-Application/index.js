@@ -1,53 +1,85 @@
-var express = require('express');
-var mongoose = require('mongoose');
-var app = express();
-const port = 3000;
+let express = require('express')
+let mongoose = require('mongoose')
+let animeModel = require("./models/anime")
+let config = require("./config")
+let app = express()
+const path = require('path');
+const port = 3000
+let mongoURI = `mongodb://root:t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF@${ config.localhost ? `mongodb` : `localhost` }:27017`
 
 async function main() {
-    await mongoose.connect('mongodb://root:example@mongo:27017');
+    console.log(`Attempting to connect to '${mongoURI}'`)
+    await mongoose.connect(mongoURI)
+    
 }
 
 main().then(function() {
-    console.log("Mongoose connected!");
-}).catch(err => console.log(err));
+    console.log("Mongoose connected!")
+}).catch(err => console.log(err))
 
-var carModel = require("./models/car");
 
-app.set("view engine", "ejs");
-app.use(express.urlencoded());
-app.use(express.json());
+
+// app.set("view engine", "ejs")
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json())
 
 app.get("/", function(req, res){
-    res.send("Mongo example server is live!");
+    try{
+        res.send("RESTful API and Database Application is live.")
+    }catch(e){
+        console.log(`Error: ${e}`)
+        res.status(500)
+    }
 })
 
-app.get("/form", function(req, res){
-    res.render("pages/form");
-});
+app.get("/upload", function(req, res){
+    try{
+        res.sendFile(path.join(__dirname, 'views/pages', 'form.html'));
+    }catch(e){
+        console.log(`Error: ${e}`)
+        res.status(500)
+    }
+})
 
-app.get("/garage", function(req,res) {
-    carModel.listAllCars().then(function(cars){
-        res.render("pages/garage", {cars:cars});
-    });
+app.get("/list", function(req,res) {
+    try{
+        animeModel.listAllAnime().then(function(anime){
+            res.sendFile(path.join(__dirname, 'views/pages', 'animeList.html'));
+        })
+    }catch(e){
+        console.log(`Error: ${e}`)
+        res.send(`Internal Server Error`)
+        res.statusCode(500)
+    }
     
 })
 
-app.get("/before/:year", function(req, res) {
-    carModel.find({year : {$lt : req.params.year}}).then(function(cars){
-        res.render("pages/garage", {cars:cars});
-    });
-});
+app.post('/anime', function(req, res){
+    try{
+        console.log("Anime: " + JSON.stringify(req.body.anime))
+        let newAnime = new animeModel(req.body.anime)
+        
+        newAnime.save().then(function(){
+            res.send("Added new anime to database!")
+        })
+    }catch(e){
+        console.log(`Error: ${e}`)
+        res.status(500)
+    }
 
-app.post('/car', function(req, res){
-    console.log("Car: " + JSON.stringify(req.body.car));
-    var newCar = new carModel(req.body.car);
-    
-    newCar.save().then(function(){
-        res.send("Added new car to database!");
-    });
+})
 
-});
+app.get('/animes', async function(req,res){
+    try{
+        let mongo_query = await animeModel.listAllAnime({})
+        console.log(mongo_query)
+        res.send(mongo_query)
+    }catch(e){
+        console.log(`Error: ${e}`)
+        res.status(500)
+    }
+})
 
 app.listen(port, function() {
-  console.log("App listening on port " + port + " !");
-});
+  console.log("App listening on port " + port + " !")
+})

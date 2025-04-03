@@ -8,7 +8,7 @@ services:
     environment:
       NODE_NUMBER: 1
     ports:
-      - '2106:3000' #note you will need to change 2106 to your assigned port number
+      - '2106:3000' 
     build:
       context: .
       dockerfile: ./Dockerfile.node
@@ -22,7 +22,7 @@ services:
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: example
+      MONGO_INITDB_ROOT_PASSWORD: t4J22uR8nEJYbe99zX4eQyFa5BA7VZF7A65e3zHk3gM2LUwUJF
     volumes: 
       database_volume:/data/db
 

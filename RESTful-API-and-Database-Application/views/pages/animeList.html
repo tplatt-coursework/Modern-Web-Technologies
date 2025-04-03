@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="myList">
+    <h1>Anime List</h1>
+    <table id="table"></table>
+</div>
+
+<script>
+    fetch(`/animes`, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log(data);  
+        let table = document.getElementById(`table`)
+        data.forEach(function(show){
+            console.log(show)
+            let entry = document.createElement(`li`)
+            let str = `${show.Name} (${show.Studio}) - ${show.Episodes} Episodes - Aired ${new Date(show.Aired).toLocaleDateString()}`
+            entry.innerHTML = str
+            table.appendChild(entry)
+        })
+    })
+    .catch(error => {
+        console.error('Fetch error:', error);
+    });
+</script>
+
+</body>
+</html>

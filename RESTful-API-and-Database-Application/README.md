@@ -3,21 +3,35 @@
  - Course:      `CS-532-M01 Modern Web Technologies; Dr. Bill Hamilton`
  - Assignment:  `Individual Assignment: Distributed Multiplayer Game`
  - Deadline:    `03/19/2025`
- - Description: `This assignment builds upon the Simple Multiplayer Game assignment.`
 
 ---
 
-# Features: 
- - TODO
+# Description
+In this assignment I create a database powered web app using node.js and MongoDB.
+
+### Deliverables
+[ ] `/upload`
+    HTTP POST request allowing for the entry of a new document into the MongoDB.
+[ ] `/list`
+    lists all objects within your collection. This page can be either rendered server side or client side using AJAX to a rest route.
+[ ] `/query`
+    Takes some input into a form and makes a parameterized query of the data set. This request must be made via AJAX from the page at /query, i.e., using XMLHttpRequest or Fetch.
+[x] `/anime`
+    HTTP POST request to create an object in the dataset
+[ ] `/<Object Name>s`
+    HTTP GET request that takes query parameters to make to return query result of objects
+---
+
+# Files included
+ - `/models/TODO.js`
+ - `/mongo/docker-compose.yml`
+ - `/views/form.ejs`
+ - `/views/form.ejs`
+ - `/views/form.ejs`
 
 ---
 
-# Files included:
- - TODO
-
----
-
-# Local Host: 
+# Running on localhost
 These instructions are for running this assignment on localhost `127.0.0.1`. If running on localhost, you will need to have a mongodb listening on the default port `27017` with no authentication set up.
 
 ### Setting up Mongo
@@ -33,7 +47,7 @@ To run:
 
 ---
 
-# NMSU Podman:
+# Running on pdmn.cs.nmsu.edu
 These instructions are for running this assignment on the department server `pdmn.cs.nmsu.edu`. It is worth noting that Podman's container will not be taken down if a `ctrl-c` keyboard interrupt occurs.
 
 In the config file `config.js`, ensure that the variable `localhost` is set to `false`
@@ -49,10 +63,12 @@ To view all podman processes:
 To stop a specific container:
     `podman stop <CONTAINER ID>`
 
+---
+
 # Known Issues
 ### aardvark DNS issue
 When stopping a podman container, sometimes something with the aardvark dns goes wrong. If this happens, this error will show:
-```JS
+```js
 [ERROR netavark::dns::aardvark] aardvark-dns runs in a different netns, dns will not work for this container. To resolve please stop all containers, kill the aardvark-dns process, remove the /run/user/<uid>/containers/networks/aardvark-dns directory and then start the containers again
 ```
 
