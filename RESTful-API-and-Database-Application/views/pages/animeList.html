@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
+<head></head>
 <body>
 
 <div id="myList">
-    <h1>Anime List</h1>
+    <h1>List Page</h1>
     <table id="table"></table>
 </div>
 
@@ -16,12 +17,12 @@
     })
     .then(response => {
         if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
+            throw new Error(`HTTP error! status: ${response.status}`)
         }
-        return response.json();
+        return response.json()
     })
     .then(data => {
-        console.log(data);  
+        console.log(data)  
         let table = document.getElementById(`table`)
         data.forEach(function(show){
             console.log(show)
@@ -32,8 +33,8 @@
         })
     })
     .catch(error => {
-        console.error('Fetch error:', error);
-    });
+        console.error('Fetch error:', error)
+    })
 </script>
 
 </body>

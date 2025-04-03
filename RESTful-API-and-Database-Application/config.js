@@ -1,5 +1,6 @@
 let config = {
-    localhost: true
+    localhost: false,
+    verbose: false
 }
 
 

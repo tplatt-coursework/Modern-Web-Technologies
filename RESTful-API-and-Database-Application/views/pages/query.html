@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    
+
+    <h1>Query Page</h1>
+    <form id="query-form" method="get" action="/animes">
+        Search by name:          <input type="text"   name="Name"     ><br>
+        Search by studio:        <input type="text"   name="Studio"   ><br>
+        Fewer than X episodes:   <input type="number" name="lt-ep" ><br>
+        Greater than X episodes: <input type="number" name="gt-ep" ><br>
+        Aired before date:       <input type="date"   name="lt-dt"    ><br>
+        Aired after date:        <input type="date"   name="gt-dt"    ><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <br><br>
+    Query Result:
+    <table id="table"></table>
+    
+    <script>
+        function clear_table(){
+            const table = document.getElementById('table')
+            while (table.lastElementChild){
+                table.removeChild(table.lastElementChild)
+            }
+            return table
+        }
+
+        function dofetch(url){
+            fetch(url, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`)
+                }
+                return response.json()
+            })
+            .then(data => {
+                console.log(data)
+                
+                let table = clear_table()
+                data.forEach(function(show){
+                    console.log(show)
+                    let entry = document.createElement(`li`)
+                    let str = `${show.Name} (${show.Studio}) - ${show.Episodes} Episodes - Aired ${new Date(show.Aired).toLocaleDateString()}`
+                    entry.innerHTML = str
+                    table.appendChild(entry)
+                })
+            })
+            .catch(error => {
+                console.error('Fetch error:', error)
+            })
+        }
+
+        document.getElementById("query-form").addEventListener("submit", function(event){
+            //prevent form from default submit
+            event.preventDefault()
+
+            //get the form's data
+            const formElement = document.getElementById('query-form')
+            const formData = new FormData(formElement)
+
+            //construct the url
+            const params = new URLSearchParams()
+            for (const key of formData.keys()) {
+                console.log(key + " : " + formData.get(key))
+                if(formData.get(key) != '')
+                    params.append(key, formData.get(key))
+            }
+            const url = '/animes?' + params.toString()
+
+            console.log(url)
+            dofetch(url)
+
+        })  
+    </script>
+
+</body>
+</html>
