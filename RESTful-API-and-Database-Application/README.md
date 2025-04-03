@@ -74,3 +74,11 @@ When stopping a podman container, sometimes something with the aardvark dns goes
 
 If the instructor has not fixed this issue yet, running this command after stopping the podman container will temporarily fix the issue. The issue will occur again after successfully starting and stopping a container.
 `kill -9 "$(cat /run/user/"$(id -u)"/containers/networks/aardvark-dns/aardvark.pid)"`
+
+### aardvark issue
+
+```js
+ERRO[0000] "netavark: IO error: Error while applying dns entries: IO error: aardvark-dns failed to start: Error from child process\nError starting server failed to bind udp listener on 10.89.0.1:53: IO error: Cannot assign requested address (os error 99)"
+```
+
+I don't have a clue. FML
