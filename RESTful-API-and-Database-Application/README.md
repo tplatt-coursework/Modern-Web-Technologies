@@ -7,19 +7,24 @@
 ---
 
 # Description
-In this assignment I create a database powered web app using node.js and MongoDB.
+In this assignment I create a database powered web app using node.js and MongoDB. The base URL hosted on NMSU's provided server is `https://tplatt.cs382.net/`. 
 
-### Deliverables
+## Deliverables
+
+### HTTP GET Requests
 [x] `/upload`
-    HTTP POST request allowing for the entry of a new document into the MongoDB. </br>
+    Sends the client `form.html`, allowing them to input data which will be uploaded to the database via a form directed at the `/anime` API.</br>
 [x] `/list`
-    lists all objects within your collection. This page can be either rendered server side or client side using AJAX to a rest route.</br>
+    Sends the client `animeList.html` which uses the `/animes` API to receive all data.</br>
 [x] `/query`
-    Takes some input into a form and makes a parameterized query of the data set. This request must be made via AJAX from the page at /query, i.e., using XMLHttpRequest or Fetch.</br>
+    Sends the client `query.html` allowing them to input search criteria which will be sent in as parameters with the `/animes` API.</br>
+    [x] `/animes`
+    HTTP GET request that takes query parameters to make to return query result of objects</br>
+
+### HTTP POST Requests
 [x] `/anime`
     HTTP POST request to create an object in the dataset</br>
-[x] `/animes`
-    HTTP GET request that takes query parameters to make to return query result of objects</br>
+
 ---
 
 # Files included
