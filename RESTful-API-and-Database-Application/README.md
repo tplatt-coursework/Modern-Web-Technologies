@@ -7,7 +7,7 @@
 ---
 
 # Description
-In this assignment I create a database powered web app using node.js and MongoDB. The base URL hosted on NMSU's provided server is `https://tplatt.cs382.net/`. 
+In this assignment I create a database powered web app using node.js and MongoDB. The base URL hosted on NMSU's provided server is `https://tplatt.cs382.net/`. If run locally, this webapp listens on `localhost` on port `3000`.
 
 ## Deliverables
 
@@ -18,7 +18,7 @@ In this assignment I create a database powered web app using node.js and MongoDB
     Sends the client `animeList.html` which uses the `/animes` API to receive all data.</br>
 [x] `/query`
     Sends the client `query.html` allowing them to input search criteria which will be sent in as parameters with the `/animes` API.</br>
-    [x] `/animes`
+[x] `/animes`
     HTTP GET request that takes query parameters to make to return query result of objects</br>
 
 ### HTTP POST Requests
@@ -86,4 +86,7 @@ If the instructor has not fixed this issue yet, running this command after stopp
 ERRO[0000] "netavark: IO error: Error while applying dns entries: IO error: aardvark-dns failed to start: Error from child process\nError starting server failed to bind udp listener on 10.89.0.1:53: IO error: Cannot assign requested address (os error 99)"
 ```
 
-I don't have a clue. FML
+Same command from above will fix this.
+
+### podman Issues   
+The class's server periodically goes down. My code is running in podman at the time of submission, but I have no way to guarentee this will continue to be the case at the time of grading. If issues arise, please reach out and I can easily re-up my container. If the container goes down causing a grade deduction, I will be sure to complain profusely :p
